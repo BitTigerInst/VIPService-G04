@@ -99,14 +99,21 @@
 76 # step 7, sub-step 1： get total entries, training sets , 
 77 ds_sample=ds[:300].label 
 78 print(len(ds_sample)) 
-79 print(ds.app.describe()) 
-80 
- 
-81 
+79 print(ds_sample.describe())
+
+# compute the weight of non-empty category_id user in all VIP-purchase group
+length=len(ds)
+ds=ds[ds>0]
+ds=ds.dropna()                     
+# clear na value
+print(len(ds))
+print(ds)
+print(ds.describe())
+ds.sort_values(by="category_id")
+ds=ds.loc[ds["category_id"]!="[]"]
+counter=len(ds)
+appPerc=counter/length
+print(appPerc)
  
 
- 
-102 
- 
-103 
  
