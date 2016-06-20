@@ -104,28 +104,7 @@
  
 81 
  
-82 # In[ ]: 
-83 
- 
-84 # compute the weight of non-empty category_id user (unfinished!) 
-85 import pandas as pd 
-86 def compWeight(ds): 
-87     counter=0 
-88     list=[] 
-89     se=pd.DataFrame(ds["category_id"]) 
-90     se1=pd.DataFrame(ds["label"]) 
-91     print(se) 
-92 #     print(ds["category_id"][10] == []) 
-93 #     list=[x for x in ds["category_id"] if x==[]] 
-94 
- 
-95     for value in se: 
-96         if not any(value) : 
-97             counter+=1 
-98             list.append(counter) 
-99     print(list) 
-100 compWeight(ds) 
-101 
+
  
 102 
  
